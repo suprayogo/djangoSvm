@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
       'myapp',
+        'corsheaders',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,7 +60,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
          'django.middleware.cache.UpdateCacheMiddleware',
-        'django.middleware.cache.FetchFromCacheMiddleware'
+        'django.middleware.cache.FetchFromCacheMiddleware',
+          'corsheaders.middleware.CorsMiddleware',
+   
 ]
 
 ROOT_URLCONF = 'mysite.urls'
