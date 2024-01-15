@@ -47,10 +47,12 @@ INSTALLED_APPS = [
       'myapp',
         'corsheaders',
 ]
+# Avoid using wildcard unless necessary
 CORS_ALLOWED_ORIGINS = [
     "https://django-server-production-fcd0.up.railway.app",
-    # Add other allowed origins as needed
+    "*",
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
