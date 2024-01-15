@@ -1,0 +1,81 @@
+<!-- templates/base/pembagian_data.html -->
+{% extends 'main.html' %} {% block content %}
+<div id="wrapper">
+  <div class="data_awal" id="content">
+    <div class="container mt-5">
+      <h2 class="mb-5">Hasil Proses Pembagian Data Training & Data Testing</h2>
+      <hr />
+
+      <div class="row mt-5">
+        <div class="col-md-6">
+            <h2>Data Training</h2>
+            <hr />
+            <div class="table-container">
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">Usia (Bulan)</th>
+                            <th scope="col">Berat Badan (Kg)</th>
+                            <th scope="col">Tinggi Badan (Cm)</th>
+                            <th scope="col">Status Gizi</th>
+                
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for balita_pelatihan in data_balita_pelatihan %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ balita_pelatihan.balita_diskritis.jenis_kelamin }}</td>
+                            <td>{{ balita_pelatihan.balita_diskritis.usia|floatformat:0 }}</td>
+                            <td>{{ balita_pelatihan.balita_diskritis.berat_badan|floatformat:0 }}</td>
+                            <td>{{ balita_pelatihan.balita_diskritis.tinggi_badan|floatformat:0 }}</td>
+                            <td>{{ balita_pelatihan.balita_diskritis.status_gizi }}</td>
+                       
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+        <div class="col-md-6">
+            <h2>Data Testing</h2>
+            <hr />
+            <div class="table-container">
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">Usia (Bulan)</th>
+                            <th scope="col">Berat Badan (Kg)</th>
+                            <th scope="col">Tinggi Badan (Cm)</th>
+                            <th scope="col">Status Gizi</th>
+                   
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for balita_pengujian in data_balita_pengujian %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ balita_pengujian.balita_diskritis.jenis_kelamin }}</td>
+                            <td>{{ balita_pengujian.balita_diskritis.usia|floatformat:0 }}</td>
+                            <td>{{ balita_pengujian.balita_diskritis.berat_badan|floatformat:0 }}</td>
+                            <td>{{ balita_pengujian.balita_diskritis.tinggi_badan|floatformat:0 }}</td>
+                            <td>{{ balita_pengujian.balita_diskritis.status_gizi }}</td>
+                       
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+  </div>
+</div>
+
+{% endblock %}

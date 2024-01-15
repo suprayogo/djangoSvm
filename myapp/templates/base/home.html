@@ -1,0 +1,16 @@
+<!-- templates/home.html -->
+{% extends 'main.html' %} {% block content %}
+   <div id="content">
+        <div class="container mt-5">
+            <div class="jumbotron text-center">
+                <h1 class="display-4">Selamat Datang</h1>
+                <p class="lead">Di Puskesmas Gunung Meria</p>
+                <hr class="my-4">
+                <p>Silakan Klasifikasi Status Gizi Balita Menggunakan Metode SVM untuk menemukan informasi yang Anda butuhkan.</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="{% url 'data_awal' %}" role="button">Mulai</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

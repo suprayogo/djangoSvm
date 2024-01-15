@@ -1,0 +1,192 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  background-color: #343a40;
+  color: #fff !important;
+  padding: 10px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+header a {
+  margin: 0;
+  font-size: 18px;
+  text-decoration: none !important;
+  color: white;
+  font-weight: 600;
+}
+
+#navbar .logout {
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  background-color: #d9534f !important;
+  margin: 0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.logout:hover {
+  background-color: #c9302c;
+}
+
+#wrapper {
+  display: flex;
+}
+
+#sidebar {
+  background-color: #343a40;
+  color: #fff;
+  min-width: 250px;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  z-index: 1;
+  margin-top: 60px;
+  text-decoration: none !important;
+}
+
+#content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 250px;
+  transition: margin-left 0.3s;
+  margin-top: 60px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none !important;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #76b852;
+  color: #fff;
+  text-decoration: none !important;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+/*--------------------------------------------------------------
+# Choose File data_awal.html
+--------------------------------------------------------------*/
+
+.container {
+  margin-top: 5rem;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  margin-right: 10px;
+  margin-top: 9px;
+}
+
+.file-input-container {
+  position: relative;
+  margin-right: 10px;
+}
+
+.form-control-file {
+  width: 200px;
+  height: 32px;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.submit-button {
+  height: 38px;
+  background-color: #76b852 !important;
+  border-color: #76b852 !important;
+  text-align: center;
+  line-height: 30px;
+  bottom: 0;
+  top: 0;
+}
+
+#data_awal button {
+  font-size: 10px;
+  color: #c9302c !important;
+}
+
+.data_awal h2 {
+  text-align: center !important;
+}
+
+.messages {
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  text-align: center;
+  width: 30%;
+  left: 25%;
+  top: 15%;
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.success {
+  background-color: #76b852;
+  color: #fff;
+}
+
+.error {
+  color: white;
+  background-color: red;
+}
+
+/*--------------------------------------------------------------
+# Gaya untuk tabel
+--------------------------------------------------------------*/
+.table {
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  text-align: center;
+}
+
+.table thead {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.exam-button{
+  background-color: #76b852;
+  border-radius: 5px;
+  border-color: #76b852;
+  color: #fff;
+}

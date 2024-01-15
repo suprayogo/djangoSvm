@@ -1,0 +1,12 @@
+<div id="navbar">
+  <header>
+    <a href="/">Klasifikasi Status Gizi Balita Menggunakan Metode SVM</a>
+  </header>
+
+  <form method="submit" action="{% url 'logout' %}" id="logoutForm">
+    {% csrf_token %}
+    <button class="logout" type="button" onclick="confirmLogout()">
+      <i class="fas fa-sign-out-alt icon"></i> Logout
+    </button>
+  </form>
+</div>

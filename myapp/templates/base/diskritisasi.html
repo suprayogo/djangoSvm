@@ -1,0 +1,82 @@
+<!-- templates/base/data_awal.html -->
+{% extends 'main.html' %}
+
+{% block content %}
+<div id="wrapper">
+    <div class="data_awal" id="content">
+        <div class="container mt-5">
+           
+            <h2 class="text-center">Keterangan Tabel Proses Diskritisasi</h2>
+            <div class="table-container">
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">Status Gizi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     
+                        <tr>
+                            <td>Laki-laki => 1</td>
+                            <td>Gizi Buruk => 1</td>
+                        </tr>
+                     
+                        <tr>
+                            <td>Perempuan => 2</td>
+                            <td>Gizi Kurang => 2</td>
+                        </tr>
+                     
+                        <tr>
+                            <td></td>
+                            <td>Gizi Normal => 3</td>
+                        </tr>
+                     
+                        <tr>
+                            <td></td>
+                            <td>Gizi Lebih => 4</td>
+                        </tr>
+                
+                     
+                </table>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <h2 class="text-center mt-5">Hasil Proses Diskritisasi</h2>
+            <form action="{% url 'proses_bagi_data' %}" method="post">
+                {% csrf_token %}
+                <button class="exam-button " type="submit">Proses Pembagian Data</button>
+            </form>
+
+
+            <div class="table-container mt-5">
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">Usia (Bulan)</th>
+                            <th scope="col">Berat Badan (Kg)</th>
+                            <th scope="col">Tinggi Badan (Cm)</th>
+                            <th scope="col">Status Gizi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for balita in data_balita_diskritis %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ balita.jenis_kelamin }}</td>
+                            <td>{{ balita.usia|floatformat:0 }}</td>
+                            <td>{{ balita.berat_badan|floatformat:0 }}</td>
+                            <td>{{ balita.tinggi_badan|floatformat:0 }}</td>
+                            <td>{{ balita.status_gizi }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

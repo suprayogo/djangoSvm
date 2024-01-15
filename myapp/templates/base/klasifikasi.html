@@ -1,0 +1,39 @@
+<!-- templates/base/klasifikasi.html -->
+{% extends 'main.html' %}
+
+{% block content %}
+<div id="wrapper">
+    <div class="data_awal" id="content">
+        <div class="container mt-5">
+            <h1>Hasil Klasifikasi</h1>
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Accuracy</td>
+                        <td>{{ accuracy }}</td>
+                    </tr>
+                    <tr>
+                        <td>Precision</td>
+                        <td>{{ precision }}</td>
+                    </tr>
+                    <tr>
+                        <td>Recall</td>
+                        <td>{{ recall }}</td>
+                    </tr>
+                    <tr>
+                        <td>F1 Score</td>
+                        <td>{{ f1 }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

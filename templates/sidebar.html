@@ -1,0 +1,14 @@
+<div id="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <a href="{% url 'home' %}" {% if request.path == '/' %}class="active"{% endif %}><i class="fas fa-home icon"></i>Beranda</a>
+        <a href="{% url 'data_awal' %}" {% if request.path == '/data_awal/' %}class="active"{% endif %}><i class="fas fa-database icon text-decoration-none"></i>Data Awal</a>
+        <a href="{% url 'diskritisasi' %}"  {% if request.path == '/diskritisasi/' %}class="active"{% endif %}><i class="fas fa-filter icon text-decoration-none"></i>Diskritisasi</a>
+        <a  href="{% url 'pembagian_data' %}"  {% if request.path == '/pembagian_data/' %}class="active"{% endif %}><i class="fas fa-chart-pie icon text-decoration-none"></i>Pembagian Data</a>
+        <a  href="{% url 'klasifikasi' %}"  {% if request.path == '/klasifikasi/' %}class="active"{% endif %} ><i class="fas fa-check-circle icon text-decoration-none"></i>Klasifikasi</a>
+        <a href="{% url 'tampilkan_form_uji_data' %}"{% if request.path == '/tampilkan_form_uji_data/' %}class="active"{% endif %} ><i class="fas fa-flask icon text-decoration-none"></i>Uji Data</a>
+    </nav>
+
+    <!-- Page Content -->
+ 
+</div>

@@ -1,0 +1,102 @@
+<!-- templates/base/uji_data.html -->
+{% extends 'main.html' %} {% block content %}
+<style>
+   .hasil-prediksi {
+        flex: 1;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+    }
+
+    .hasil-prediksi h1 {
+        color: #333;
+    }
+
+ 
+    .hasil-prediksi p {
+        color: #666;
+        font-size: 18px
+    }
+
+  .container-form {
+    margin-bottom: 20px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  select,
+  input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  .form-submit {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+
+<div id="wrapper">
+  <div class="data_awal" id="content">
+    <div class="container mt-5">
+      <form method="post" action="{% url 'uji_data' %}" class="container-form">
+        {% csrf_token %}
+        <label for="jenis_kelamin">Jenis Kelamin:</label>
+        <select name="jenis_kelamin" required>
+          <option value="1">Laki-laki</option>
+          <option value="2">Perempuan</option>
+        </select>
+
+        <label for="usia">Usia (Bulan)</label>
+        <input type="text" name="usia" required />
+
+        <label for="berat_badan">Berat Badan (Kg)</label>
+        <input type="text" name="berat_badan" required />
+
+        <label for="tinggi_badan">Tinggi Badan (Cm)</label>
+        <input type="text" name="tinggi_badan" required />
+
+        <input class="form-submit" type="submit" value="Uji Data" />
+      </form>
+
+      <div class="row">
+
+        <div class="hasil-prediksi">
+            <h1 style="color: #333;">Keterangan hasil</h1>
+            
+            {% if hasil_prediksi %}
+                {% with hasil=hasil_prediksi.0 %}
+                    {% if hasil == '1' %}
+                        <p style="color: red; font-weight: bold;">Gizi Buruk</p>
+                    {% elif hasil == '2' %}
+                        <p style="color: orange; font-weight: bold;">Gizi Kurang</p>
+                    {% elif hasil == '3' %}
+                        <p style="color: green; font-weight: bold;">Gizi Normal</p>
+                    {% elif hasil == '4' %}
+                        <p style="color: blue; font-weight: bold;">Gizi Lebih</p>
+                    {% else %}
+                        <p style="color: gray;">Hasil prediksi tidak valid</p>
+                    {% endif %}
+                {% endwith %}
+            {% else %}
+                <p style="color: gray;">Hasil prediksi tidak tersedia</p>
+            {% endif %}
+        </div>
+        
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

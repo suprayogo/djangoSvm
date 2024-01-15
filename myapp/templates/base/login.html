@@ -1,0 +1,45 @@
+
+<!-- login.html -->
+
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/login_.css' %}">
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<div class="login-page">
+    <div class="form">
+        <p>Klasifikasi Status Gizi Balita Menggunakan Metode SVM</p>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    {{ form.username }}
+                </div>
+                <div class="input-group">
+                    {{ form.password }}
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+  
+    {% if messages %}
+        <script>
+            setTimeout(function() {
+                var messages = document.getElementsByClassName('messages');
+                for (var i = 0; i < messages.length; i++) {
+                    messages[i].style.display = 'none';
+                }
+            }, 3000);
+        </script>
+    {% endif %}
+
+{% endblock %}
