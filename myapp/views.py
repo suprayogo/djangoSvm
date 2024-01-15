@@ -60,6 +60,10 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'base/login.html', {'form': form})
 
+
+
+    
+
 def user_logout(request):
     logout(request)
     response = redirect('login')
