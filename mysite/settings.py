@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 # Avoid using wildcard unless necessary
 CORS_ALLOWED_ORIGINS = [
     "https://django-server-production-fcd0.up.railway.app",
-    "*",
+       "https://*",
 ]
 
 
