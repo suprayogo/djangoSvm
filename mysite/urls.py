@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from myapp.views import user_login, user_logout, home, data_awal,diskritisasi, proses_bagi_data, pembagian_data,klasifikasi, uji_data, tampilkan_form_uji_data
+from myapp.views import user_login, user_logout, home, data_awal,diskritisasi, proses_bagi_data, pembagian_data,klasifikasi, uji_data, tampilkan_form_uji_data, register
 
 
 urlpatterns = [
        path('', home, name='home'),
        path('login/', user_login, name='login'),
+       path('register/', register, name='register'),
          path('logout/', user_logout, name='logout'),
          path('data_awal/', data_awal, name='data_awal'),
          path('diskritisasi/', diskritisasi, name='diskritisasi'),

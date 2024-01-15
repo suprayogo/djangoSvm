@@ -22,7 +22,17 @@ from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
 import joblib 
 from django.views.decorators.csrf import csrf_protect
+from .forms import SimpleRegisterForm
 
+def register(request):
+    if request.method == 'POST':
+        form = SimpleRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = SimpleRegisterForm()
+    return render(request, 'base/register.html', {'form': form})
 
 
 @login_required(login_url='login')  
