@@ -21,6 +21,8 @@ import os
 from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
 import joblib 
+from django.views.decorators.csrf import csrf_protect
+
 
 
 @login_required(login_url='login')  
